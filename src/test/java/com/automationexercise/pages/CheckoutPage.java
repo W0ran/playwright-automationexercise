@@ -45,6 +45,11 @@ public class CheckoutPage extends BasePage {
 
     public CheckoutPage placeOrder() {
         click(PLACE_ORDER_BUTTON);
+        // Переход на страницу оплаты происходит через полную перезагрузку (новый URL /payment).
+        // На CI (headless) рендеринг иногда чуть медленнее, чем локально в headed-режиме —
+        // явно ждём появления поля имени держателя карты перед тем, как продолжать,
+        // вместо того чтобы полагаться на стандартный actionability-таймаут одного fill().
+        waitForVisible(NAME_ON_CARD_INPUT);
         return this;
     }
 
