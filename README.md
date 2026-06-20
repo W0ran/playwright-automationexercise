@@ -1,5 +1,7 @@
 # Playwright + Java Test Automation Framework
 
+[![CI](https://github.com/W0ran/playwright-automationexercise/actions/workflows/ci.yml/badge.svg)](https://github.com/W0ran/playwright-automationexercise/actions/workflows/ci.yml)
+
 End-to-end UI test automation framework for [automationexercise.com](https://automationexercise.com), built with **Java**, **Playwright**, and **TestNG**, following the **Page Object Model (POM)** design pattern.
 
 This project was built as a portfolio piece to demonstrate practical test automation engineering skills: framework architecture, stable locator strategy, API-based test data setup, and CI-friendly configuration.
