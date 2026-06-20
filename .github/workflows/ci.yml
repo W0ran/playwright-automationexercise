@@ -9,7 +9,11 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # Закреплено на 22.04, а не ubuntu-latest (24.04/noble): на noble пакет libasound2
+    # был переименован в libasound2t64, из-за чего Playwright --with-deps падает
+    # с "Package 'libasound2' has no installation candidate". На 22.04 имя пакета
+    # ещё актуально и установка системных зависимостей браузера проходит штатно.
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repository
